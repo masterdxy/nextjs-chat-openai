@@ -72,7 +72,7 @@ export default function PageHome() {
     <ClientSide>
       <Toaster />
       <Head>
-        <title>NextJS Chat OpenAI</title>
+        <title>大聪明 by davinci-003</title>
       </Head>
       <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 md:p-10">
         <div className="flex flex-col flex-grow w-full max-w-xl bg-white shadow-xl rounded-lg overflow-hidden">
@@ -92,10 +92,10 @@ export default function PageHome() {
 
                 <div className="flex flex-col leading-tight">
                   <div className="mt-1 flex items-center">
-                    <span className="text-gray-700 mr-3">Bot OpenAI</span>
+                    <span className="text-gray-700 mr-3">大聪明</span>
                   </div>
                   <span className="text-sm text-gray-600">
-                    {loading ? "Typing..." : "Online"}
+                    {loading ? "思考中..." : "Online"}
                   </span>
                 </div>
               </div>
@@ -118,17 +118,17 @@ export default function PageHome() {
                           <Dialog.Title
                             as="h3"
                             className="font-medium leading-6 text-gray-900">
-                            Are you sure ?
+                            确定吗 ?
                           </Dialog.Title>
                           <Dialog.Description className="mt-1">
-                            Are you sure delete all chat ?
+                            删除所有对话 ?
                           </Dialog.Description>
                           <div className="mt-4 flex justify-end space-x-4">
                             <button
                               type="button"
                               className="inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100"
                               onClick={() => setModalRemoveAll(false)}>
-                              Cancel
+                              算了
                             </button>
                             <button
                               type="button"
@@ -136,7 +136,7 @@ export default function PageHome() {
                               onClick={() => {
                                 setModalRemoveAll(false), removeAllChat();
                               }}>
-                              Yes, delete all chats
+                              好滴
                             </button>
                           </div>
                         </Dialog.Panel>
@@ -156,13 +156,13 @@ export default function PageHome() {
                   className="flex items-center justify-center h-full w-full"
                   ref={chatRef}>
                   <div className="text-center text-gray-600">
-                    <p>No message here...</p>
-                    <p>Send a message or tap the greeting icon below</p>
+                    <p>空空的...</p>
+                    <p>给我发消息或者点一下下面的图标</p>
                     <div className="cursor-pointer">
                       <button
                         type="button"
                         className="my-10"
-                        onClick={() => addChat("Hello, how are you?")}>
+                        onClick={() => addChat("你好呀")}>
                         <IconHand loading={loading} />
                       </button>
                     </div>
@@ -205,17 +205,17 @@ export default function PageHome() {
                                 <Dialog.Title
                                   as="h3"
                                   className="font-medium leading-6 text-gray-900">
-                                  Are you sure ?
+                                  确定吗 ?
                                 </Dialog.Title>
                                 <Dialog.Description className="mt-1">
-                                  Are you sure delete chat {item.chat} ?
+                                  删除 {item.chat} ?
                                 </Dialog.Description>
                                 <div className="mt-4 flex justify-end space-x-4">
                                   <button
                                     type="button"
                                     className="inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100"
                                     onClick={() => setModalRemoveOne()}>
-                                    Cancel
+                                    作罢
                                   </button>
                                   <button
                                     type="button"
@@ -223,7 +223,7 @@ export default function PageHome() {
                                     onClick={() => {
                                       setModalRemoveOne(), removeOneChat(item);
                                     }}>
-                                    Yes, delete
+                                    好哒
                                   </button>
                                 </div>
                               </Dialog.Panel>

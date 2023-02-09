@@ -4,7 +4,7 @@ const { Configuration, OpenAIApi } = require("openai");
 export default async function handler(req, res) {
   // if method not post send this
   if (req.method !== "POST") {
-    res.status(405).send({ message: "Only POST requests allowed!!" });
+    res.status(405).send({ message: "只能POST哦" });
     return;
   }
   // if method post then do it
@@ -29,11 +29,11 @@ export default async function handler(req, res) {
         res.json(response.data.choices[0].text);
         // if can't get data from openai send error
       } else {
-        res.status(500).send("Oops, Something went wrong!!");
+        res.status(500).send("被限速了...");
       }
       // if no chat send error not found
     } else {
-      res.status(404).send("Please, write your chat!!");
+      res.status(404).send("没有输入呀...");
     }
   }
 }
